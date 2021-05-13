@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>
+            Movie App
+        </title>
+        <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet"href="/stylesheets/design.css">
+        <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@450">
+        
+    </head>
+    <body background="">
+        <h1 id="searchHeading" style="color:rgb(218, 136, 136)">
+            🔍Search Result<span style="color:grey"> ❯ </span><%= searchQuery.toUpperCase() %>
+        </h1>
+        
+        <% data["results"].forEach((movie)=>{ %>
+
+            <div class="card mb-5 w-75">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src=" https://www.themoviedb.org/t/p/w600_and_h900_bestv2<%= movie["poster_path"] %>" class="card-img img-fluid">
+                    </div>
+    
+                    <div class="col-md-8" id="p" >
+                        <h2 class="card-title"> ❝ <%= movie["original_title"]%> ❞</h2>
+                        <hr>
+                        <p class="card-text" style="text-align: center;">
+                             <%= movie["overview"] %> 
+                         </p>
+                         <hr>
+                         <br>
+                          <p class="card-text"><b>««»» Date Published:</b> <%= movie["release_date"]%></p>
+                          <p class="card-text"><b>««»»  Total votes:</b> <%= movie["vote_count"]%></p>
+                         <p class="card-text"><b>««»»  Average Rating</b> <%= movie["vote_average"]%></p>
+                    </div>
+                </div>
+            </div>
+
+
+       <% })%>
+
+
+       
+    </body>
+</html>
